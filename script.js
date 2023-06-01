@@ -14,7 +14,7 @@ function dateTime(){
 	let minutes = currentDate.getMinutes();
 	let seconds = currentDate.getSeconds();
 
-	let period = hours >= 12 ? PM : AM;
+	let period = hours >= 12 ? "PM" : "AM";
 	if(hours > 12){
 		hours = hours % 12;
 	}
@@ -22,7 +22,8 @@ function dateTime(){
 	let formattedTime = hours + ":" + minutes + ":" + seconds + period;
 	timer.append(formattedDate + ", ");
 	timer.append(formattedTime);
+
+	// requestAnimationFrame(dateTime);
 }
 
-setInterval(dateTime, 1000);
 dateTime();
