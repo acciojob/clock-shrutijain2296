@@ -2,7 +2,8 @@
 let timer = document.getElementById("timer");
 
 function dateTime(){
-	let currentDate = new Date();
+	function updateTimer(){
+		let currentDate = new Date();
 
 	let month = currentDate.getMonth()+1;
 	let date = currentDate.getDate();
@@ -22,8 +23,10 @@ function dateTime(){
 	let formattedTime = hours + ":" + minutes + ":" + seconds + period;
 	timer.append(formattedDate + ", ");
 	timer.append(formattedTime);
-
-	// requestAnimationFrame(dateTime);
+	}
+	
+  updateTimer();
+  setInterval(dateTime, 1000);
 }
 
 dateTime();
